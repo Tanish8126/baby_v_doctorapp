@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "63643708041",
+    "project_id": "babyv-doctor",
+    "storage_bucket": "babyv-doctor.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:63643708041:android:20f90c3ac5982e284e7458",
+        "android_client_info": {
+          "package_name": "com.example.baby_v_doctorapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "63643708041-t6mjeftf3i5dat6jaldhmf37pu678ao5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.baby_v_doctorapp",
+            "certificate_hash": "2070ff2a0658806124876e0039f00252c350fb3f"
+          }
+        },
+        {
+          "client_id": "63643708041-p1lf0vif89rhk6t51mjldveb0fjhrr3r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD1bD3zIthoih3D7QmB2PXz_Inn56xitnU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "63643708041-p1lf0vif89rhk6t51mjldveb0fjhrr3r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
