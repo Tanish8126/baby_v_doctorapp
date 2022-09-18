@@ -1,3 +1,4 @@
+import 'package:baby_v_doctorapp/screens/home/home_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../utils/dafault_button2.dart';
@@ -43,7 +44,8 @@ class _SplashScreenState extends State<SplashScreen> {
               DefaultButton2(
                 text: "Discover more ..",
                 press: () {
-                  Navigator.pushNamed(context, LoginScreen.routeName);
+                  HomeScreen();
+                  //  Navigator.pushNamed(context, LoginScreen.routeName);
                 },
               ),
               Spacer(),

@@ -1,3 +1,4 @@
+import 'package:baby_v_doctorapp/screens/home/home_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -104,7 +105,8 @@ class _LoginScreenState extends State<LoginScreen> {
                   Center(
                     child: InkWell(
                       onTap: () {
-                        _signInUser();
+                        //_signInUser();
+                       // HomeScreen();
                       },
                       child: Container(
                         width: double.infinity,

@@ -1,3 +1,5 @@
+import 'package:baby_v_doctorapp/screens/appointment/appointment_screen.dart';
+import 'package:baby_v_doctorapp/screens/home/home_screen.dart';
 import 'package:baby_v_doctorapp/utils/routes.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -22,8 +24,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute: SplashScreen.routeName,
-      routes: routes,
+      home: AppointmentScreen(),
     );
   }
 }

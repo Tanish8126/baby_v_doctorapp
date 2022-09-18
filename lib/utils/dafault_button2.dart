@@ -15,7 +15,7 @@ class DefaultButton2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: getProportionateScreenWidth(200),
+      width: getProportionateScreenWidth(100),
       height: getProportionateScreenHeight(56),
       child: TextButton(
         style: TextButton.styleFrom(
