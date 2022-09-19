@@ -1,5 +1,3 @@
-import 'package:baby_v_doctorapp/screens/appointment/appointment_screen.dart';
-import 'package:baby_v_doctorapp/screens/home/home_screen.dart';
 import 'package:baby_v_doctorapp/utils/routes.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -19,12 +17,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: "Baby V Care Doctor's App",
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: AppointmentScreen(),
+      initialRoute: SplashScreen.routeName,
+      routes: routes,
     );
   }
 }

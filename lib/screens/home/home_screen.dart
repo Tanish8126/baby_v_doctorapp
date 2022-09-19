@@ -1,9 +1,10 @@
+import 'package:baby_v_doctorapp/screens/home/components/drawer.dart';
+import 'package:baby_v_doctorapp/screens/home/components/notification_screen.dart';
 import 'package:baby_v_doctorapp/utils/dafault_button.dart';
 import 'package:flutter/material.dart';
 
-import '../../utils/size_config.dart';
-
 class HomeScreen extends StatefulWidget {
+  static String routeName = '/homescreen';
   const HomeScreen({Key? key}) : super(key: key);
 
   @override
@@ -11,13 +12,9 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  final scaffoldKey = GlobalKey<ScaffoldState>();
-
   @override
   Widget build(BuildContext context) {
-    SizeConfig().init(context);
     return Scaffold(
-      key: scaffoldKey,
       appBar: AppBar(
         backgroundColor: Colors.blueAccent,
         title: Text(
@@ -30,134 +27,58 @@ class _HomeScreenState extends State<HomeScreen> {
         actions: [
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(0, 0, 20, 0),
-            child: Icon(
-              Icons.notifications_active,
-              color: Colors.white,
-              size: 35,
+            child: IconButton(
+              onPressed: () {
+                Navigator.pushNamed(context, NotificationScreen.routename);
+              },
+              icon: Icon(
+                Icons.notifications_active,
+                color: Colors.white,
+                size: 35,
+              ),
             ),
-          ),
+          )
         ],
         centerTitle: true,
       ),
       backgroundColor: Colors.white,
-      drawer: Drawer(
-        //elevation: 16,
-        child: Padding(
-          padding: const EdgeInsets.only(left: 10.0, right: 10, top: 30),
-          child: Column(
-            mainAxisSize: MainAxisSize.max,
-            children: [
-              Image.network(
-                'https://picsum.photos/seed/457/600',
-                width: 100,
-                height: 100,
-                fit: BoxFit.cover,
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Text(
-                'Hello World',
-                style: TextStyle(
-                  fontSize: 20,
-                ),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Row(
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  GestureDetector(
-                    child: Text(
-                      'Hello World',
-                      style: TextStyle(
-                        fontFamily: 'Poppins',
-                        fontSize: 20,
-                      ),
-                    ),
-                    onTap: () {},
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Row(
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  GestureDetector(
-                    child: Text(
-                      'Hello World',
-                      style: TextStyle(
-                        fontFamily: 'Poppins',
-                        fontSize: 20,
-                      ),
-                    ),
-                    onTap: () {},
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Row(
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  GestureDetector(
-                    child: Text(
-                      'Hello World',
-                      style: TextStyle(
-                        fontFamily: 'Poppins',
-                        fontSize: 20,
-                      ),
-                    ),
-                    onTap: () {},
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: 50,
-              ),
-              DefaultButton(
-                press: () {
-                  print('Button pressed ...');
-                },
-                text: 'Button',
-              ),
-            ],
-          ),
-        ),
-      ),
-      body: SafeArea(
+      drawer: DrawerScreen(),
+      body: Padding(
+        padding: const EdgeInsets.all(10),
         child: Column(
           mainAxisSize: MainAxisSize.max,
           children: [
-            ListView(
-              padding: EdgeInsets.zero,
-              shrinkWrap: true,
-              scrollDirection: Axis.vertical,
-              children: [
-                Align(
-                  alignment: AlignmentDirectional(0, 0),
-                  child: Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 0),
-                    child: Banner(
-                        message: "Hello", location: BannerLocation.topStart),
-                    // child: FlutterFlowAdBanner(
-                    //   width: MediaQuery.of(context).size.width,
-                    //   height: 150,
-                    //   showsTestAd: true,
-                    // ),
-                  ),
+            Container(
+              height: 230,
+              decoration: BoxDecoration(
+                  color: Colors.blue, borderRadius: BorderRadius.circular(10)),
+              child: Padding(
+                padding: const EdgeInsets.all(10),
+                child: Column(
+                  children: [
+                    Text(
+                      "Upcoming Appointments",
+                      style: TextStyle(fontSize: 18, color: Colors.black),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    ListView(
+                      padding: EdgeInsets.zero,
+                      shrinkWrap: true,
+                      scrollDirection: Axis.vertical,
+                      children: [
+                        buildAppointmentRow(context,
+                            "Date- 27/10/2022 Slot- 1.15-1.30 Patient Name- Mohit"),
+                        buildAppointmentRow(context,
+                            "Date- 20/10/2022 Slot- 10.15-10.30 Patient Name- Shivam"),
+                        buildAppointmentRow(context,
+                            "Date- 10/10/2022 Slot- 12.30-12.45 Patient Name- Rahul"),
+                      ],
+                    ),
+                  ],
                 ),
-              ],
-            ),
-            ListView(
-              padding: EdgeInsets.zero,
-              shrinkWrap: true,
-              scrollDirection: Axis.vertical,
-              children: [],
+              ),
             ),
             SizedBox(
               height: 100,
@@ -169,6 +90,23 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
       ),
+    );
+  }
+
+  buildAppointmentRow(
+    BuildContext context,
+    String title,
+  ) {
+    return Column(
+      children: [
+        Text(
+          title,
+          style: TextStyle(fontSize: 16, color: Colors.black),
+        ),
+        Divider(
+          thickness: 2,
+        )
+      ],
     );
   }
 }

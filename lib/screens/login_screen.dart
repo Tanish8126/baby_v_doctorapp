@@ -1,4 +1,3 @@
-import 'package:baby_v_doctorapp/screens/home/home_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -105,8 +104,8 @@ class _LoginScreenState extends State<LoginScreen> {
                   Center(
                     child: InkWell(
                       onTap: () {
-                        //_signInUser();
-                       // HomeScreen();
+                        _signInUser();
+                        // Navigator.pushNamed(context, HomeScreen.routeName);
                       },
                       child: Container(
                         width: double.infinity,
@@ -125,20 +124,20 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
                   ),
-                  SizedBox(height: SizeConfig.screenHeight * 0.08),
-                  _isSigning == true
-                      ? Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text("Please wait..."),
-                            SizedBox(
-                              width: 10,
-                            ),
-                            CircularProgressIndicator()
-                          ],
-                        )
-                      : Container(),
-                  SizedBox(height: getProportionateScreenHeight(30)),
+                  // SizedBox(height: SizeConfig.screenHeight * 0.08),
+                  // _isSigning == true
+                  //     ? Row(
+                  //         mainAxisAlignment: MainAxisAlignment.center,
+                  //         children: [
+                  //           Text("Please wait..."),
+                  //           SizedBox(
+                  //             width: 10,
+                  //           ),
+                  //           CircularProgressIndicator()
+                  //         ],
+                  //       )
+                  //     : Container(),
+                  // SizedBox(height: getProportionateScreenHeight(30)),
                 ]),
               ),
             )));

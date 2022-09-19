@@ -1,5 +1,10 @@
+import 'package:baby_v_doctorapp/screens/appointment/appointment_screen.dart';
+import 'package:baby_v_doctorapp/screens/profile_screen.dart';
 import 'package:flutter/widgets.dart';
 
+import '../screens/home/components/notification_screen.dart';
+import '../screens/home/home_screen.dart';
+import '../screens/login_check.dart';
 import '../screens/login_screen.dart';
 import '../screens/splash_screen.dart';
 
@@ -7,16 +12,15 @@ import '../screens/splash_screen.dart';
 // All our routes will be available here
 final Map<String, WidgetBuilder> routes = {
   LoginScreen.routeName: (context) => LoginScreen(),
-//   LoginCheckScreen.routeName: (context) => LoginCheckScreen(),
-//   HomeScreen.routeName: (context) => HomeScreen(),
+  LoginCheckScreen.routeName: (context) => LoginCheckScreen(),
+  HomeScreen.routeName: (context) => HomeScreen(),
   SplashScreen.routeName: (context) => SplashScreen(),
-
+  AppointmentScreen.routeName: (context) => AppointmentScreen(),
+  NotificationScreen.routename: (context) => NotificationScreen(),
 //   SettingsScreen.routeName: (context) => SettingsScreen(),
-//   BookingScreen.routeName: (context) => BookingScreen(),
-//   MessageScreen.routeName: (context) => MessageScreen(),
+  ProfileScreen.routeName: (context) => ProfileScreen(),
 //   MainScreenForm.routeName: (context) => MainScreenForm(),
 //   AppointmentForm.routeName: (context) => AppointmentForm(),
-//   NotificationScreen.routeName: (context) => NotificationScreen(),
 //   UploadScreen.routeName: (context) => UploadScreen(),
 //   BookingCalendarDemoApp.routeName: (context) => BookingCalendarDemoApp(),
 };

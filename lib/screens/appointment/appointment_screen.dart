@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import '../../utils/size_config.dart';
 
 class AppointmentScreen extends StatefulWidget {
+  static String routeName = '/appointmentscreen';
   AppointmentScreen({Key? key}) : super(key: key);
 
   @override
