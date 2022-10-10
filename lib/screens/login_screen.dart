@@ -51,7 +51,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                   SizedBox(height: SizeConfig.screenHeight * 0.02),
-                  Text(
+                  const Text(
                     "Sign in with your email and password",
                     textAlign: TextAlign.center,
                     style: TextStyle(color: kPrimaryLightColor),
@@ -59,7 +59,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   SizedBox(height: SizeConfig.screenHeight * 0.08),
                   TextFormField(
                     keyboardType: TextInputType.emailAddress,
-                    style: TextStyle(color: kPrimaryLightColor),
+                    style: const TextStyle(color: kPrimaryLightColor),
                     controller: _emailController,
                     // validator: (value) {
                     //   if (value!.isEmpty) {
@@ -71,7 +71,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     //   }
                     //   return null;
                     // },
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                         enabledBorder: UnderlineInputBorder(
                             borderSide: BorderSide(color: kTextColor)),
                         fillColor: kTextColor,
@@ -87,8 +87,8 @@ class _LoginScreenState extends State<LoginScreen> {
                   TextFormField(
                       controller: _passwordController,
                       obscureText: true,
-                      style: TextStyle(color: kPrimaryLightColor),
-                      decoration: InputDecoration(
+                      style: const TextStyle(color: kPrimaryLightColor),
+                      decoration: const InputDecoration(
                         enabledBorder: UnderlineInputBorder(
                             borderSide: BorderSide(color: kTextColor)),
                         fillColor: kTextColor,

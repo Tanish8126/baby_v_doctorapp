@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 
 import '../utils/dafault_button.dart';
 import '../utils/size_config.dart';
-import 'login_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   static String routeName = "/splashcreen";
@@ -26,10 +25,10 @@ class _SplashScreenState extends State<SplashScreen> {
               'assets/images/babyvcare.png',
               width: 200,
             ),
-            SizedBox(
+            const SizedBox(
               height: 50,
             ),
-            Text(
+            const Text(
               "Welcome to Baby V Care Doctor's App",
               style: TextStyle(
                   color: Colors.black,
@@ -37,14 +36,14 @@ class _SplashScreenState extends State<SplashScreen> {
                   fontSize: 20),
               textAlign: TextAlign.center,
             ),
-            Spacer(flex: 3),
+            const Spacer(flex: 3),
             DefaultButton(
               text: "Continue",
               press: () {
                 Navigator.pushNamed(context, LoginCheckScreen.routeName);
               },
             ),
-            Spacer(),
+            const Spacer(),
           ],
         ),
       ),

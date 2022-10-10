@@ -1,20 +1,20 @@
 {
   "project_info": {
-    "project_number": "63643708041",
-    "project_id": "babyv-doctor",
-    "storage_bucket": "babyv-doctor.appspot.com"
+    "project_number": "807712417415",
+    "project_id": "babyv-care",
+    "storage_bucket": "babyv-care.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:63643708041:android:20f90c3ac5982e284e7458",
+        "mobilesdk_app_id": "1:807712417415:android:ee4e4454739c1e82273a22",
         "android_client_info": {
           "package_name": "com.example.baby_v_doctorapp"
         }
       },
       "oauth_client": [
         {
-          "client_id": "63643708041-t6mjeftf3i5dat6jaldhmf37pu678ao5.apps.googleusercontent.com",
+          "client_id": "807712417415-douff9b54f2s8v3a3dbtvmq3nqpiptnj.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.baby_v_doctorapp",
@@ -22,20 +22,57 @@
           }
         },
         {
-          "client_id": "63643708041-p1lf0vif89rhk6t51mjldveb0fjhrr3r.apps.googleusercontent.com",
+          "client_id": "807712417415-q62g61cra75ti8c12ds5kh6e1o9h78i5.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyD1bD3zIthoih3D7QmB2PXz_Inn56xitnU"
+          "current_key": "AIzaSyA8_3ACXXMCiGL7HvHc5wTlIwWwOUlyqUA"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "63643708041-p1lf0vif89rhk6t51mjldveb0fjhrr3r.apps.googleusercontent.com",
+              "client_id": "807712417415-q62g61cra75ti8c12ds5kh6e1o9h78i5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:807712417415:android:7d4de21fd535ebbc273a22",
+        "android_client_info": {
+          "package_name": "com.newapp.babyv_care"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "807712417415-ufojmktnkp9nmfp6su7jmkbks5achvfr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.newapp.babyv_care",
+            "certificate_hash": "2070ff2a0658806124876e0039f00252c350fb3f"
+          }
+        },
+        {
+          "client_id": "807712417415-q62g61cra75ti8c12ds5kh6e1o9h78i5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA8_3ACXXMCiGL7HvHc5wTlIwWwOUlyqUA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "807712417415-q62g61cra75ti8c12ds5kh6e1o9h78i5.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

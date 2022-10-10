@@ -1,3 +1,4 @@
+import 'package:baby_v_doctorapp/screens/appointment/appointment_screen.dart';
 import 'package:baby_v_doctorapp/screens/home/components/drawer.dart';
 import 'package:baby_v_doctorapp/screens/home/components/notification_screen.dart';
 import 'package:baby_v_doctorapp/utils/dafault_button.dart';
@@ -17,7 +18,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blueAccent,
-        title: Text(
+        title: const Text(
           "Bavy V Care Doctor's App",
           style: TextStyle(
             color: Colors.white,
@@ -26,12 +27,12 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         actions: [
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(0, 0, 20, 0),
+            padding: const EdgeInsetsDirectional.fromSTEB(0, 0, 20, 0),
             child: IconButton(
               onPressed: () {
                 Navigator.pushNamed(context, NotificationScreen.routename);
               },
-              icon: Icon(
+              icon: const Icon(
                 Icons.notifications_active,
                 color: Colors.white,
                 size: 35,
@@ -56,11 +57,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 padding: const EdgeInsets.all(10),
                 child: Column(
                   children: [
-                    Text(
+                    const Text(
                       "Upcoming Appointments",
                       style: TextStyle(fontSize: 18, color: Colors.black),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     ListView(
@@ -80,11 +81,13 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 100,
             ),
             DefaultButton(
-              press: () {},
+              press: () {
+                Navigator.pushNamed(context, AppointmentScreen.routeName);
+              },
               text: 'All Appointments',
             ),
           ],
@@ -101,9 +104,9 @@ class _HomeScreenState extends State<HomeScreen> {
       children: [
         Text(
           title,
-          style: TextStyle(fontSize: 16, color: Colors.black),
+          style: const TextStyle(fontSize: 16, color: Colors.black),
         ),
-        Divider(
+        const Divider(
           thickness: 2,
         )
       ],

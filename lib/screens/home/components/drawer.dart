@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 
 import '../../../utils/constants.dart';
 import '../../../utils/dafault_button.dart';
+import '../../login_screen.dart';
 
 class DrawerScreen extends StatefulWidget {
   DrawerScreen({Key? key}) : super(key: key);
@@ -32,19 +33,19 @@ class _DrawerScreenState extends State<DrawerScreen> {
                 height: 100,
                 fit: BoxFit.cover,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Text(
                 '$Email',
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 20,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
-              Divider(
+              const Divider(
                 height: 15,
                 thickness: 2,
                 color: kMainColor,
@@ -54,11 +55,18 @@ class _DrawerScreenState extends State<DrawerScreen> {
               buildAccountOptionRow(context, "Setting", SplashScreen.routeName),
               buildAccountOptionRow(
                   context, "Notifications", NotificationScreen.routename),
-              SizedBox(
+              const SizedBox(
                 height: 50,
               ),
               DefaultButton(
-                press: () {},
+                press: () async {
+                  await FirebaseAuth.instance.signOut();
+                  Navigator.pushAndRemoveUntil(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const LoginScreen()),
+                      (route) => false);
+                },
                 text: 'Sign Out',
               ),
             ],
@@ -82,13 +90,13 @@ GestureDetector buildAccountOptionRow(
         children: [
           Text(
             title,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.w500,
               color: kPrimaryLightColor,
             ),
           ),
-          Icon(
+          const Icon(
             Icons.arrow_forward_ios,
             color: kPrimaryLightColor,
           ),

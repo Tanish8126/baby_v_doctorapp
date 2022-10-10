@@ -14,10 +14,11 @@ dependencies:
 
   cupertino_icons: ^1.0.2
   flutter_svg: ^1.1.5
-  pinput: ^2.2.12
   firebase_auth: ^3.9.0
   firebase_core: ^1.22.0
   cloud_firestore: ^3.4.8
+  smart_auth: ^1.0.6
+  json_annotation: ^4.7.0
 
 dev_dependencies:
   flutter_test:

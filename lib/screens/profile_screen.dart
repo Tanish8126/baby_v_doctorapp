@@ -14,9 +14,9 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
-  final Mobile = FirebaseAuth.instance.currentUser!.phoneNumber;
-  final Email = FirebaseAuth.instance.currentUser!.email;
-  final Name = FirebaseAuth.instance.currentUser!.displayName;
+  final mobile = FirebaseAuth.instance.currentUser!.phoneNumber;
+  final email = FirebaseAuth.instance.currentUser!.email;
+  final name = FirebaseAuth.instance.currentUser!.displayName;
 
   final Stream<QuerySnapshot> usersStream =
       FirebaseFirestore.instance.collection('users').snapshots();
@@ -33,7 +33,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 print("Something Went Wrong");
               }
               if (snapshot.connectionState == ConnectionState.waiting) {
-                return Center(
+                return const Center(
                   child: CircularProgressIndicator(),
                 );
               }
@@ -46,30 +46,30 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
               return Scaffold(
                 body: Container(
-                  padding: EdgeInsets.only(left: 16, top: 25, right: 16),
+                  padding: const EdgeInsets.only(left: 16, top: 25, right: 16),
                   child: GestureDetector(
                       onTap: () {
                         FocusScope.of(context).unfocus();
                       },
                       child: ListView(
                         children: [
-                          Text(
+                          const Text(
                             "Edit Profile",
                             style: TextStyle(
                                 fontSize: 25,
                                 fontWeight: FontWeight.w500,
                                 color: kPrimaryColor),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 35,
                           ),
-                          buildTextField("Full Name", "$Name", false),
-                          buildTextField("Mobile Number", "$Mobile", false),
-                          buildTextField("E-mail", "$Email", false),
+                          buildTextField("Full Name", "$name", false),
+                          buildTextField("Mobile Number", "$mobile", false),
+                          buildTextField("E-mail", "$email", false),
                           buildTextField("Password", "Password", true),
                           buildTextField(
                               "Location", "Yelahanka, Bangalore", false),
-                          SizedBox(
+                          const SizedBox(
                             height: 35,
                           ),
                           Center(
@@ -105,12 +105,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
     return Padding(
       padding: const EdgeInsets.only(bottom: 35.0),
       child: TextField(
-        style: TextStyle(color: kPrimaryLightColor),
+        style: const TextStyle(color: kPrimaryLightColor),
         obscureText: isPasswordTextField ? showPassword : false,
         decoration: InputDecoration(
-            enabledBorder:
-                UnderlineInputBorder(borderSide: BorderSide(color: kTextColor)),
-            labelStyle: TextStyle(color: kPrimaryColor),
+            enabledBorder: const UnderlineInputBorder(
+                borderSide: BorderSide(color: kTextColor)),
+            labelStyle: const TextStyle(color: kPrimaryColor),
             suffixIcon: isPasswordTextField
                 ? IconButton(
                     onPressed: () {
@@ -118,14 +118,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         showPassword = !showPassword;
                       });
                     },
-                    icon: Icon(Icons.remove_red_eye, color: kPrimaryLightColor),
+                    icon: const Icon(Icons.remove_red_eye,
+                        color: kPrimaryLightColor),
                   )
                 : null,
-            contentPadding: EdgeInsets.only(bottom: 3),
+            contentPadding: const EdgeInsets.only(bottom: 3),
             labelText: labelText,
             floatingLabelBehavior: FloatingLabelBehavior.always,
             hintText: placeholder,
-            hintStyle: TextStyle(
+            hintStyle: const TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
                 color: kPrimaryLightColor)),

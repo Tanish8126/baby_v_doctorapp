@@ -11,9 +11,9 @@ import '../screens/splash_screen.dart';
 // We use name route
 // All our routes will be available here
 final Map<String, WidgetBuilder> routes = {
-  LoginScreen.routeName: (context) => LoginScreen(),
-  LoginCheckScreen.routeName: (context) => LoginCheckScreen(),
-  HomeScreen.routeName: (context) => HomeScreen(),
+  LoginScreen.routeName: (context) => const LoginScreen(),
+  LoginCheckScreen.routeName: (context) => const LoginCheckScreen(),
+  HomeScreen.routeName: (context) => const HomeScreen(),
   SplashScreen.routeName: (context) => SplashScreen(),
   AppointmentScreen.routeName: (context) => AppointmentScreen(),
   NotificationScreen.routename: (context) => NotificationScreen(),
