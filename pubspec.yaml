@@ -19,6 +19,7 @@ dependencies:
   cloud_firestore: ^3.4.8
   smart_auth: ^1.0.6
   json_annotation: ^4.7.0
+  intl: ^0.17.0
 
 dev_dependencies:
   flutter_test:

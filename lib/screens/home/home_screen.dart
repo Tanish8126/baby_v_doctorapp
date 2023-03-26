@@ -1,18 +1,14 @@
 import 'package:baby_v_doctorapp/screens/appointment/appointment_screen.dart';
+import 'package:baby_v_doctorapp/screens/home/components/appointmentbanner.dart';
 import 'package:baby_v_doctorapp/screens/home/components/drawer.dart';
 import 'package:baby_v_doctorapp/screens/home/components/notification_screen.dart';
 import 'package:baby_v_doctorapp/utils/dafault_button.dart';
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatefulWidget {
+class HomeScreen extends StatelessWidget {
   static String routeName = '/homescreen';
   const HomeScreen({Key? key}) : super(key: key);
 
-  @override
-  _HomeScreenState createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,44 +39,13 @@ class _HomeScreenState extends State<HomeScreen> {
         centerTitle: true,
       ),
       backgroundColor: Colors.white,
-      drawer: DrawerScreen(),
+      drawer: const DrawerScreen(),
       body: Padding(
         padding: const EdgeInsets.all(10),
         child: Column(
           mainAxisSize: MainAxisSize.max,
           children: [
-            Container(
-              height: 230,
-              decoration: BoxDecoration(
-                  color: Colors.blue, borderRadius: BorderRadius.circular(10)),
-              child: Padding(
-                padding: const EdgeInsets.all(10),
-                child: Column(
-                  children: [
-                    const Text(
-                      "Upcoming Appointments",
-                      style: TextStyle(fontSize: 18, color: Colors.black),
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    ListView(
-                      padding: EdgeInsets.zero,
-                      shrinkWrap: true,
-                      scrollDirection: Axis.vertical,
-                      children: [
-                        buildAppointmentRow(context,
-                            "Date- 27/10/2022 Slot- 1.15-1.30 Patient Name- Mohit"),
-                        buildAppointmentRow(context,
-                            "Date- 20/10/2022 Slot- 10.15-10.30 Patient Name- Shivam"),
-                        buildAppointmentRow(context,
-                            "Date- 10/10/2022 Slot- 12.30-12.45 Patient Name- Rahul"),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-            ),
+            Flexible(child: AppointmentBanner()),
             const SizedBox(
               height: 100,
             ),
@@ -93,23 +58,6 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
       ),
-    );
-  }
-
-  buildAppointmentRow(
-    BuildContext context,
-    String title,
-  ) {
-    return Column(
-      children: [
-        Text(
-          title,
-          style: const TextStyle(fontSize: 16, color: Colors.black),
-        ),
-        const Divider(
-          thickness: 2,
-        )
-      ],
     );
   }
 }

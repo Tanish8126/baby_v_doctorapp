@@ -1,6 +1,6 @@
-import 'package:baby_v_doctorapp/utils/constants.dart';
 import 'package:baby_v_doctorapp/utils/dafault_button2.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
@@ -8,7 +8,7 @@ import '../../utils/size_config.dart';
 
 class AppointmentScreen extends StatefulWidget {
   static String routeName = '/appointmentscreen';
-  AppointmentScreen({Key? key}) : super(key: key);
+  const AppointmentScreen({Key? key}) : super(key: key);
 
   @override
   State<AppointmentScreen> createState() => _AppointmentScreenState();
@@ -16,9 +16,12 @@ class AppointmentScreen extends StatefulWidget {
 
 class _AppointmentScreenState extends State<AppointmentScreen> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
+  String uid = FirebaseAuth.instance.currentUser!.uid;
 
-  final Stream<QuerySnapshot> appointmentList =
-      FirebaseFirestore.instance.collection('bookings').snapshots();
+  final Stream<QuerySnapshot> appointmentList = FirebaseFirestore.instance
+      .collection('bookings')
+      .where("doctorName", isEqualTo: "Dr. Mahesh")
+      .snapshots();
 
   bool setDefaultMake = true;
   @override
@@ -36,17 +39,19 @@ class _AppointmentScreenState extends State<AppointmentScreen> {
           snapshot.data?.docs.map((DocumentSnapshot document) {
             Map bookdata = document.data() as Map<String, dynamic>;
             bookingdatanew.add(bookdata);
-            print(bookingdatanew);
+            //print(bookingdatanew);
+            //print(uid);
           }).toList();
           return Scaffold(
             appBar: AppBar(
                 title: const Text(
                   'Appointements',
                 ),
+                backgroundColor: Colors.blueAccent,
                 centerTitle: true),
             body: Column(
               children: [
-                Text(
+                const Text(
                   'Upcoming Appointments',
                   style: TextStyle(fontSize: 20, color: Colors.black87),
                 ),
@@ -65,7 +70,7 @@ class _AppointmentScreenState extends State<AppointmentScreen> {
                               width: double.infinity,
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(10),
-                                  color: kbg),
+                                  color: Colors.blueAccent),
                               child: Column(
                                 children: [
                                   SizedBox(
@@ -77,7 +82,7 @@ class _AppointmentScreenState extends State<AppointmentScreen> {
                                   buildOption(context,
                                       'Baby Name: ${document["babyName"]}'),
                                   buildOption(context,
-                                      'Mobile Number: ${document["phoneNumber"]}'),
+                                      'Patient Number: ${document["phoneNumber"]}'),
                                   buildOption(context,
                                       'Email Id: ${document["email"]}'),
                                   buildOption(context,
@@ -86,8 +91,6 @@ class _AppointmentScreenState extends State<AppointmentScreen> {
                                       'Booking Start: ${DateFormat('dd-MM-yyyy : h:mm a').format(document["bookingStart"].toDate())}'),
                                   buildOption(context,
                                       'Booking End: ${DateFormat('yyyy-MM-dd : h:mm a').format(document["bookingEnd"].toDate())}'),
-                                  buildOption(context,
-                                      'Doctor Name: ${document["doctorName"]}'),
                                   SizedBox(
                                       height: SizeConfig.screenHeight * 0.015),
                                 ],
@@ -148,10 +151,7 @@ buildOption(
         Text(
           title,
           style: const TextStyle(
-            fontSize: 14,
-            fontWeight: FontWeight.w500,
-            color: kbg,
-          ),
+              fontSize: 14, fontWeight: FontWeight.w500, color: Colors.black),
         ),
       ],
     ),

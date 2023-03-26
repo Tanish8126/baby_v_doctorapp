@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:baby_v_doctorapp/screens/home/components/notification_screen.dart';
 import 'package:baby_v_doctorapp/screens/profile_screen.dart';
 import 'package:baby_v_doctorapp/screens/splash_screen.dart';
@@ -9,14 +11,14 @@ import '../../../utils/dafault_button.dart';
 import '../../login_screen.dart';
 
 class DrawerScreen extends StatefulWidget {
-  DrawerScreen({Key? key}) : super(key: key);
+  const DrawerScreen({Key? key}) : super(key: key);
 
   @override
   State<DrawerScreen> createState() => _DrawerScreenState();
 }
 
 class _DrawerScreenState extends State<DrawerScreen> {
-  final Email = FirebaseAuth.instance.currentUser!.email;
+  final email = FirebaseAuth.instance.currentUser!.email;
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -37,7 +39,7 @@ class _DrawerScreenState extends State<DrawerScreen> {
                 height: 20,
               ),
               Text(
-                '$Email',
+                '$email',
                 style: const TextStyle(
                   fontSize: 20,
                 ),

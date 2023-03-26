@@ -6,7 +6,7 @@ import '../utils/size_config.dart';
 
 class SplashScreen extends StatefulWidget {
   static String routeName = "/splashcreen";
-  SplashScreen({Key? key}) : super(key: key);
+  const SplashScreen({Key? key}) : super(key: key);
 
   @override
   State<SplashScreen> createState() => _SplashScreenState();

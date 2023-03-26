@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'constants.dart';
 import 'size_config.dart';
 
 class DefaultButton extends StatelessWidget {
@@ -22,7 +21,7 @@ class DefaultButton extends StatelessWidget {
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
           foregroundColor: Colors.white,
-          backgroundColor: kbg,
+          backgroundColor: Colors.blueAccent,
         ),
         onPressed: press as void Function()?,
         child: Text(

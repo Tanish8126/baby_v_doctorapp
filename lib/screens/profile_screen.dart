@@ -7,7 +7,7 @@ import '../utils/size_config.dart';
 
 class ProfileScreen extends StatefulWidget {
   static String routeName = '/profilescreen';
-  ProfileScreen({Key? key}) : super(key: key);
+  const ProfileScreen({Key? key}) : super(key: key);
 
   @override
   State<ProfileScreen> createState() => _ProfileScreenState();
@@ -16,10 +16,11 @@ class ProfileScreen extends StatefulWidget {
 class _ProfileScreenState extends State<ProfileScreen> {
   final mobile = FirebaseAuth.instance.currentUser!.phoneNumber;
   final email = FirebaseAuth.instance.currentUser!.email;
-  final name = FirebaseAuth.instance.currentUser!.displayName;
+
+  // await user?.updateDisplayName("Jane Q. User");
 
   final Stream<QuerySnapshot> usersStream =
-      FirebaseFirestore.instance.collection('users').snapshots();
+      FirebaseFirestore.instance.collection('doctors').snapshots();
 
   bool showPassword = false;
   @override
@@ -30,7 +31,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             builder:
                 (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
               if (snapshot.hasError) {
-                print("Something Went Wrong");
+                //  print("Something Went Wrong");
               }
               if (snapshot.connectionState == ConnectionState.waiting) {
                 return const Center(
@@ -63,8 +64,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           const SizedBox(
                             height: 35,
                           ),
-                          buildTextField("Full Name", "$name", false),
-                          buildTextField("Mobile Number", "$mobile", false),
+                          buildTextField("Full Name", "Dr. Mahesh", false),
+                          buildTextField("Mobile Number", "6788685455", false),
                           buildTextField("E-mail", "$email", false),
                           buildTextField("Password", "Password", true),
                           buildTextField(

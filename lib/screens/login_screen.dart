@@ -16,8 +16,8 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  TextEditingController _emailController = TextEditingController();
-  TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
   String? email;
   String? password;
   bool? remember;
@@ -28,8 +28,6 @@ class _LoginScreenState extends State<LoginScreen> {
     _passwordController.dispose();
     super.dispose();
   }
-
-  bool? _isSigning = false;
 
   @override
   Widget build(BuildContext context) {
@@ -144,22 +142,15 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   Future _signInUser() async {
-    setState(() {
-      _isSigning = true;
-    });
     try {
       await FirebaseAuth.instance
           .signInWithEmailAndPassword(
-        email: _emailController.text,
-        password: _passwordController.text,
-      )
-          .then((value) {
-        setState(() {
-          _isSigning = false;
-        });
-      });
+            email: _emailController.text,
+            password: _passwordController.text,
+          )
+          .then((value) {});
     } catch (e) {
-      print("some error $e");
+      // print("some error $e");
     }
   }
 }
