@@ -1,4 +1,4 @@
-package com.example.baby_v_doctorapp
+package com..baby.doctorapp
 
 import io.flutter.embedding.android.FlutterActivity
 

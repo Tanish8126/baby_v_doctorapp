@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:807712417415:android:ee4e4454739c1e82273a22",
         "android_client_info": {
-          "package_name": "com.example.baby_v_doctorapp"
+          "package_name": "com..baby.doctorapp"
         }
       },
       "oauth_client": [
@@ -17,7 +17,7 @@
           "client_id": "807712417415-douff9b54f2s8v3a3dbtvmq3nqpiptnj.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.baby_v_doctorapp",
+            "package_name": "com..baby.doctorapp",
             "certificate_hash": "2070ff2a0658806124876e0039f00252c350fb3f"
           }
         },
