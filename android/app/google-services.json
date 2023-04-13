@@ -1,24 +1,33 @@
 {
   "project_info": {
     "project_number": "807712417415",
+    "firebase_url": "https://babyv-care-default-rtdb.firebaseio.com",
     "project_id": "babyv-care",
     "storage_bucket": "babyv-care.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:807712417415:android:ee4e4454739c1e82273a22",
+        "mobilesdk_app_id": "1:807712417415:android:44690be2647d26ab273a22",
         "android_client_info": {
-          "package_name": "com..baby.doctorapp"
+          "package_name": "com.baby.doctorapp"
         }
       },
       "oauth_client": [
         {
-          "client_id": "807712417415-douff9b54f2s8v3a3dbtvmq3nqpiptnj.apps.googleusercontent.com",
+          "client_id": "807712417415-484hjtk7eg4d4gpdm0hrekdp80u2g78i.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com..baby.doctorapp",
-            "certificate_hash": "2070ff2a0658806124876e0039f00252c350fb3f"
+            "package_name": "com.baby.doctorapp",
+            "certificate_hash": "6a64525c210306376de196a04bff312a2a4f1c1d"
+          }
+        },
+        {
+          "client_id": "807712417415-ns8su28mfef356gkh7q10sjld67lqubj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.baby.doctorapp",
+            "certificate_hash": "8463437ec74fa3dda6f8c9452c08a2c9284ff053"
           }
         },
         {
@@ -51,11 +60,19 @@
       },
       "oauth_client": [
         {
-          "client_id": "807712417415-ufojmktnkp9nmfp6su7jmkbks5achvfr.apps.googleusercontent.com",
+          "client_id": "807712417415-c5ab4hq3ktir2rv242kau1hosrubhm57.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.newapp.babyv_care",
-            "certificate_hash": "2070ff2a0658806124876e0039f00252c350fb3f"
+            "certificate_hash": "8463437ec74fa3dda6f8c9452c08a2c9284ff053"
+          }
+        },
+        {
+          "client_id": "807712417415-ftgu3sdqdroe9hk92mq32psgoebfha08.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.newapp.babyv_care",
+            "certificate_hash": "48bf0a81f1c386f764cb261cdcc53c1835e77e0a"
           }
         },
         {
