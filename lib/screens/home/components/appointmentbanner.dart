@@ -40,19 +40,8 @@ class AppointmentBanner extends StatelessWidget {
                       child: CircularProgressIndicator(),
                     );
                   }
-                  if (snapshot.data!.docs.isEmpty) {
-                    return Padding(
-                      padding: const EdgeInsets.only(top: 5),
-                      child: Text(
-                        'No Upcoming Appointment',
-                        style: TextStyle(
-                          fontSize: getProportionateScreenWidth(26),
-                          fontWeight: FontWeight.normal,
-                          color: Colors.white,
-                        ),
-                      ),
-                    );
-                  } else {
+
+                  {
                     final List bookingdata1 = [];
                     snapshot.data?.docs.map((DocumentSnapshot document) {
                       Map bookdata1 = document.data() as Map<String, dynamic>;
